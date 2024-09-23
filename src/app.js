@@ -15,10 +15,18 @@ app.get("/user",(req,rsp)=>{
     rsp.send({firstName:"test", lastname:"user"});
 })
 
+app.get("/params",(req,rsp)=>{
+    console.log(req.query);
+    rsp.send(req.query);
+})
+
+app.get("/params/:id",(req,rsp)=>{
+    console.log(req.params);
+    rsp.send(req.params);
+})
 app.post("/user",(req,rsp)=>{
     rsp.send("post  call");
 })
-
 
 app.delete("/user",(req,rsp)=>{
     rsp.send("post  call");

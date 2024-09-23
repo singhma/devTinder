@@ -35,3 +35,43 @@ app.use("/hello", (req, res) => {
 ## HTTP Methods
 
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+
+### `aap.use` 
+
+it will match all the HTTP method API calls with /test, /test/* where as if you use `app.get` it will only match specific calls for that HTTP method
+
+### Use of patterns and regex in routes, examples below
+
+`b is optional  so you can send /ac, /abc`
+- app.get("/ab?c")
+
+`so you can send /abc, /abbc, /abbbbc` 
+- app.get("/ab+c")
+
+`so you can send /abtestcd, /abbcd, /abbbbcd` 
+- app.get("/ab*cd")
+
+`grouping, a(bc)d, bc is optional`
+`grouping, a(bc)+d, bc is optional`
+`use of regex`
+    - app.get("/a/") will match if route contains a
+
+### How to get query params in route handler
+in app.http method, use req.query
+
+```code
+app.get("/params",(req,rsp)=>{
+    console.log(req.query);
+    rsp.send({firstName:"test", lastname:"user"});
+})
+```
+
+### How to handle dynamic url like /params/123
+in app.http method, use req.params
+
+```code
+app.get("/params/:userID",(req,rsp)=>{
+    console.log(req.query);
+    rsp.send({firstName:"test", lastname:"user"});
+})
+```
