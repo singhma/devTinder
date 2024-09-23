@@ -5,7 +5,7 @@ const app = express();
 
 // Request Handler
 app.use("/", (req, res) => {
-    res.send("Hello from dashboard!");
+    res.send("Hello from dashboard!!");
 });
 
 
