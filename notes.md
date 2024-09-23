@@ -1,5 +1,4 @@
 # Episode 4
-
 Should we put packages.json and package-lock.json in github?
 
 Recommended - Reasons https://docs.npmjs.com/cli/v9/configuring-npm/package-lock-json

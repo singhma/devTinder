@@ -4,6 +4,9 @@ const express = require("express");
 const app = express();
 
 // Request Handler
+app.use("/", (req, res) => {
+    res.send("Hello from dashboard!!");
+});
 
 // app.use("/hello", (req, res) => {
 //     res.send("hello hello hello");
